@@ -15,14 +15,14 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=download_data_range,
                 inputs=[
                     "params:stock_name_aapl",
-                    "params:start_data",
+                    "params:start_date",
                     "params:end_date",
                 ],
                 outputs="stock_data_aapl",
                 name="Download_data_range",
             ),
         ],
-        namespace="Download_data",
+        namespace="download_data",
         inputs=None,
         outputs="stock_data_aapl",
     )

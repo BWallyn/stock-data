@@ -3,3 +3,9 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.11/configuration/parameters.html
+
+download_data.stock_name_aapl: "AAPL"
+
+download_data.start_date: "2020-01-01"
+
+download_data.end_date: "2025-03-06"
