@@ -1,0 +1,7 @@
+stock_data_aapl:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_data_aapl.parquet
+  save_args:
+    file_scheme: hive
+    has_nulls: False
+    engine: pyarrow
