@@ -9,7 +9,6 @@ generated using Kedro 0.19.11
 import pandas as pd
 import yfinance as yf
 
-
 # ===================
 # ==== FUNCTIONS ====
 # ===================
