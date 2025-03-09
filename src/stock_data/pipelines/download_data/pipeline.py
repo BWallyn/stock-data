@@ -3,7 +3,7 @@ This is a boilerplate pipeline 'download_data'
 generated using Kedro 0.19.11
 """
 
-from kedro.pipeline import node, Pipeline, pipeline
+from kedro.pipeline import Pipeline, node, pipeline
 
 from stock_data.pipelines.download_data.nodes import download_data_range
 

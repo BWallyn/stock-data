@@ -9,12 +9,14 @@ generated using Kedro 0.19.11
 import pandas as pd
 import yfinance as yf
 
-
 # ===================
 # ==== FUNCTIONS ====
 # ===================
 
-def download_data_range(stock_name: str, start_date: str, end_date: str) -> pd.DataFrame:
+
+def download_data_range(
+    stock_name: str, start_date: str, end_date: str
+) -> pd.DataFrame:
     """
     Download stock data from Yahoo Finance for a given date range.
 
@@ -38,4 +40,4 @@ def download_data_day(stock_name: str) -> pd.DataFrame:
     Returns:
         (pd.DataFrame): Stock data for the last day
     """
-    return yf.download(stock_name, period='1d')
+    return yf.download(stock_name, period="1d")

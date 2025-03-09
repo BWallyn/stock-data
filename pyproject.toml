@@ -61,3 +61,8 @@ namespaces = false
 
 [tool.kedro_telemetry]
 project_id = "7e9a43febdcb4c2e9dda8319e1592dd2"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.1.15",
+]
