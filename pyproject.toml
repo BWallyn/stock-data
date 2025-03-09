@@ -7,7 +7,17 @@ requires-python = ">=3.9"
 name = "stock_data"
 readme = "README.md"
 dynamic = [ "version",]
-dependencies = [ "ipython>=8.10", "jupyterlab>=3.0", "notebook", "kedro[jupyter]~=0.19.11", "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0", "kedro-viz>=6.7.0", "scikit-learn~=1.5.1", "seaborn~=0.12.1",]
+dependencies = [
+ "ipython>=8.10",
+ "jupyterlab>=3.0",
+ "notebook",
+ "kedro[jupyter]~=0.19.11",
+ "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0",
+ "kedro-viz>=6.7.0",
+ "scikit-learn~=1.5.1",
+ "seaborn~=0.12.1",
+ "yfinance>=0.2.54",
+]
 
 [project.scripts]
 stock-data = "stock_data.__main__:main"
@@ -48,3 +58,11 @@ attr = "stock_data.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "7e9a43febdcb4c2e9dda8319e1592dd2"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.1.15",
+]
