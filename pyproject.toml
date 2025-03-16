@@ -23,9 +23,6 @@ dependencies = [
 [project.scripts]
 stock-data = "stock_data.__main__:main"
 
-[project.optional-dependencies]
-dev = [ "pytest-cov~=3.0", "pytest-mock>=1.7.1, <2.0", "pytest~=7.2", "ruff~=0.1.8",]
-
 [tool.kedro]
 package_name = "stock_data"
 project_name = "stock-data"
@@ -65,5 +62,8 @@ project_id = "7e9a43febdcb4c2e9dda8319e1592dd2"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.1.15",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.11.0",
 ]
