@@ -53,6 +53,10 @@ select = [
 ]
 ignore = [
     "E501", # line too long
+    "D205", # blank line between summary and description
+    "D404", # first word of the docstring should not be "This"
+    "D415", # first line should end with a period, question mark or exclamation point
+    "N806", # Variable should be lowercase
 ]
 
 [project.entry-points."kedro.hooks"]
