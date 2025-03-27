@@ -10,6 +10,7 @@ from kedro.framework.project import configure_project
 
 
 def main(*args, **kwargs) -> Any:
+    """stock-data file for ensuring the package is executable"""
     package_name = Path(__file__).parent.name
     configure_project(package_name)
 

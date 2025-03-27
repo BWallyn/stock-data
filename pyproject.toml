@@ -34,7 +34,7 @@ source_dir = "src"
 [tool.ruff]
 line-length = 88
 show-fixes = true
-select = [
+lint.select = [
     "B",    # Bugbear
     "C4",   # Comprehensions
     "C90",  # mccabe
@@ -51,7 +51,7 @@ select = [
     "PL",   # pylint
     "T201", # print
 ]
-ignore = [
+lint.ignore = [
     "E501", # line too long
     "D100", # missing docstring
     "D104", # missing docstring in public package
