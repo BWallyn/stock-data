@@ -53,7 +53,10 @@ select = [
 ]
 ignore = [
     "E501", # line too long
+    "D100", # missing docstring
+    "D104", # missing docstring in public package
     "D205", # blank line between summary and description
+    "D400", # first line should end with a period, question mark or exclamation point
     "D404", # first word of the docstring should not be "This"
     "D415", # first line should end with a period, question mark or exclamation point
     "N806", # Variable should be lowercase
