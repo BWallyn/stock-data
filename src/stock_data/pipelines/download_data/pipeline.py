@@ -1,7 +1,4 @@
-"""
-This is a boilerplate pipeline 'download_data'
-generated using Kedro 0.19.11
-"""
+"""This is a boilerplate pipeline 'download_data' generated using Kedro 0.19.11"""
 
 from kedro.pipeline import Pipeline, node, pipeline
 
@@ -9,6 +6,7 @@ from stock_data.pipelines.download_data.nodes import download_data_range
 
 
 def create_pipeline(**kwargs) -> Pipeline:
+    """Pipeline to download data for a given stock name and date range."""
     return pipeline(
         pipe=[
             node(
