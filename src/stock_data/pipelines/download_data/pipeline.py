@@ -62,5 +62,11 @@ def create_pipeline(**kwargs) -> Pipeline:
         ],
         namespace="download_data",
         inputs=None,
-        outputs="stock_data_aapl",
+        outputs=[
+            "stock_data_aapl",
+            "stock_data_msft",
+            "stock_data_googl",
+            "stock_data_amzn",
+            "stock_data_blk",
+        ],
     )
