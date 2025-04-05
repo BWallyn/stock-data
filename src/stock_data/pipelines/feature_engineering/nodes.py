@@ -23,3 +23,21 @@ def add_test_indicator(df: pd.DataFrame, date_test: str) -> pd.DataFrame:
     """
     df["test"] = df["date"] >= date_test
     return df
+
+
+def add_validation(df: pd.DataFrame, n_days: int) -> pd.DataFrame:
+    """Add a validation indicator column to the DataFrame.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame.
+        n_days (int): Number of days to use for the validation indicator.
+
+    Returns:
+        (pd.DataFrame): DataFrame with the validation indicator column added.
+
+    """
+    df["validation"] = df["date"].between(
+        df[df["test"] == 0]["date"].max() - pd.Timedelta(days=n_days),
+        df[df["test"] == 0]["date"].max()
+    )
+    return df
