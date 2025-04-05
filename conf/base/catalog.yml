@@ -1,5 +1,31 @@
+# ==== Download stock data ====
+
 stock_data_aapl:
   type: pandas.ParquetDataset
   filepath: data/01_raw/stock_data_aapl.parquet
+  save_args:
+    engine: pyarrow
+
+stock_data_msft:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_data_msft.parquet
+  save_args:
+    engine: pyarrow
+
+stock_data_googl:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_data_googl.parquet
+  save_args:
+    engine: pyarrow
+
+stock_data_amzn:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_data_amzn.parquet
+  save_args:
+    engine: pyarrow
+
+stock_data_blk:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_data_blk.parquet
   save_args:
     engine: pyarrow

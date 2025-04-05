@@ -17,10 +17,56 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:end_date",
                 ],
                 outputs="stock_data_aapl",
-                name="Download_data_range",
+                name="Download_data_Apple",
+            ),
+            node(
+                func=download_data_range,
+                inputs=[
+                    "params:stock_name_msft",
+                    "params:start_date",
+                    "params:end_date",
+                ],
+                outputs="stock_data_msft",
+                name="Download_data_Microsoft",
+            ),
+            node(
+                func=download_data_range,
+                inputs=[
+                    "params:stock_name_googl",
+                    "params:start_date",
+                    "params:end_date",
+                ],
+                outputs="stock_data_googl",
+                name="Download_data_Google"
+            ),
+            node(
+                func=download_data_range,
+                inputs=[
+                    "params:stock_name_amzn",
+                    "params:start_date",
+                    "params:end_date",
+                ],
+                outputs="stock_data_amzn",
+                name="Download_data_Amazon"
+            ),
+            node(
+                func=download_data_range,
+                inputs=[
+                    "params:stock_name_blk",
+                    "params:start_date",
+                    "params:end_date",
+                ],
+                outputs="stock_data_blk",
+                name="Download_data_BlackRock"
             ),
         ],
         namespace="download_data",
         inputs=None,
-        outputs="stock_data_aapl",
+        outputs=[
+            "stock_data_aapl",
+            "stock_data_msft",
+            "stock_data_googl",
+            "stock_data_amzn",
+            "stock_data_blk",
+        ],
     )
