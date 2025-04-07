@@ -21,9 +21,9 @@ def add_test_indicator(df: pd.DataFrame, n_days: str) -> pd.DataFrame:
         df (pd.DataFrame): DataFrame with the test indicator column added.
 
     """
-    df["test"] = df["date"].between(
-        df["date"].max() - pd.Timedelta(days=n_days),
-        df["date"].max()
+    df["test"] = df["Date"].between(
+        df["Date"].max() - pd.Timedelta(days=n_days),
+        df["Date"].max()
     )
     return df
 
@@ -39,9 +39,9 @@ def add_validation_indicator(df: pd.DataFrame, n_days: int) -> pd.DataFrame:
         df (pd.DataFrame): DataFrame with the validation indicator column added.
 
     """
-    df["validation"] = df["date"].between(
-        df[df["test"] == 0]["date"].max() - pd.Timedelta(days=n_days),
-        df[df["test"] == 0]["date"].max()
+    df["validation"] = df["Date"].between(
+        df[df["test"] == 0]["Date"].max() - pd.Timedelta(days=n_days),
+        df[df["test"] == 0]["Date"].max()
     )
     return df
 
@@ -59,8 +59,8 @@ def add_validation_indicators_folds(df: pd.DataFrame, n_days: int, n_folds: int)
 
     """
     for fold in range(n_folds):
-        df[f"validation_{fold}"] = df["date"].between(
-            df[df["test"] == 0]["date"].max() - pd.Timedelta(days=n_days * (fold + 1)),
-            df[df["test"] == 0]["date"].max() - pd.Timedelta(days=n_days * fold)
+        df[f"validation_{fold}"] = df["Date"].between(
+            df[df["test"] == 0]["Date"].max() - pd.Timedelta(days=n_days * (fold + 1)),
+            df[df["test"] == 0]["Date"].max() - pd.Timedelta(days=n_days * fold)
         )
     return df
