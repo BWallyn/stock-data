@@ -8,8 +8,8 @@ from stock_data.pipelines.feature_engineering.nodes import (
 )
 
 
-def create_pipeline(**kwargs) -> Pipeline:
-    """Pipeline for feature engineering."""
+def feature_engineering_template(**kwargs) -> Pipeline:
+    """Pipeline template for feature engineering."""
     return pipeline(
         pipe=[
             node(
@@ -27,5 +27,14 @@ def create_pipeline(**kwargs) -> Pipeline:
         ],
         inputs="stock_data",
         outputs="df_feat_engineered",
-        namespace="feature_engineering",
+    )
+
+
+def create_pipeline(**kwargs) -> Pipeline:
+    """Create the pipeline for feature engineering."""
+    return pipeline(
+        pipe=feature_engineering_template(**kwargs),
+        inputs={"stock_data": "stock_data_aapl"},
+        outputs={"df_feat_engineered": "df_aapl_engineered"},
+        namespace="feature_engineering_aapl",
     )
