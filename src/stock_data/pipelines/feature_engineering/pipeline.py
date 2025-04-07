@@ -14,17 +14,18 @@ def create_pipeline(**kwargs) -> Pipeline:
         pipe=[
             node(
                 func=add_test_indicator,
-                inputs=["stock_data_aapl", "params:n_days"],
+                inputs=["stock_data", "params:n_days"],
                 outputs="df_w_test_indicator",
                 name="Add_test_indicator",
             ),
             node(
                 func=add_validation_indicator,
                 inputs=["df_w_test_indicator", "params:n_days"],
-                outputs="df_w_validation_indicator",
+                outputs="df_feat_engineered",
                 name="Add_validation_indicator",
             ),
         ],
-        inputs="stock_data_aapl",
+        inputs="stock_data",
+        outputs="df_feat_engineered",
         namespace="feature_engineering",
     )
