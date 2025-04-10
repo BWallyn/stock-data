@@ -27,7 +27,7 @@ def download_data_range(
 
     """
     # Download stock data from Yahoo Finance
-    return yf.download(stock_name, start=start_date, end=end_date)
+    return yf.download(stock_name, start=start_date, end=end_date).reset_index(drop=False)
 
 
 def download_data_day(stock_name: str) -> pd.DataFrame:
