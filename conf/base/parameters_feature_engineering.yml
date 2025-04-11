@@ -5,3 +5,7 @@
 # Link: https://docs.kedro.org/en/0.19.11/configuration/parameters.html
 
 feature_engineering_aapl.n_days: 7
+feature_engineering_amzn.n_days: 7
+feature_engineering_blk.n_days: 7
+feature_engineering_googl.n_days: 7
+feature_engineering_msft.n_days: 7
