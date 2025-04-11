@@ -30,7 +30,7 @@ def feature_engineering_template(**kwargs) -> Pipeline:
     )
 
 
-def create_pipeline(**kwargs) -> Pipeline:
+def create_fe_aapl(**kwargs) -> Pipeline:
     """Create the pipeline for feature engineering."""
     return pipeline(
         pipe=feature_engineering_template(**kwargs),
