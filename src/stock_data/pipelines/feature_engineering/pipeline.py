@@ -30,11 +30,51 @@ def feature_engineering_template(**kwargs) -> Pipeline:
     )
 
 
-def create_pipeline(**kwargs) -> Pipeline:
+def create_fe_aapl(**kwargs) -> Pipeline:
     """Create the pipeline for feature engineering."""
     return pipeline(
         pipe=feature_engineering_template(**kwargs),
         inputs={"stock_data": "stock_data_aapl"},
         outputs={"df_feat_engineered": "df_aapl_engineered"},
         namespace="feature_engineering_aapl",
+    )
+
+
+def create_fe_amzn(**kwargs) -> Pipeline:
+    """Create the pipeline for feature engineering."""
+    return pipeline(
+        pipe=feature_engineering_template(**kwargs),
+        inputs={"stock_data": "stock_data_amzn"},
+        outputs={"df_feat_engineered": "df_amzn_engineered"},
+        namespace="feature_engineering_amzn",
+    )
+
+
+def create_fe_msft(**kwargs) -> Pipeline:
+    """Create the pipeline for feature engineering."""
+    return pipeline(
+        pipe=feature_engineering_template(**kwargs),
+        inputs={"stock_data": "stock_data_msft"},
+        outputs={"df_feat_engineered": "df_msft_engineered"},
+        namespace="feature_engineering_msft",
+    )
+
+
+def create_fe_googl(**kwargs) -> Pipeline:
+    """Create the pipeline for feature engineering."""
+    return pipeline(
+        pipe=feature_engineering_template(**kwargs),
+        inputs={"stock_data": "stock_data_googl"},
+        outputs={"df_feat_engineered": "df_googl_engineered"},
+        namespace="feature_engineering_googl",
+    )
+
+
+def create_fe_blk(**kwargs) -> Pipeline:
+    """Create the pipeline for feature engineering."""
+    return pipeline(
+        pipe=feature_engineering_template(**kwargs),
+        inputs={"stock_data": "stock_data_blk"},
+        outputs={"df_feat_engineered": "df_blk_engineered"},
+        namespace="feature_engineering_blk",
     )
