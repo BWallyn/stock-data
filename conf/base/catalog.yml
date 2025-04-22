@@ -29,3 +29,36 @@ stock_data_blk:
   filepath: data/01_raw/stock_data_blk.parquet
   save_args:
     engine: pyarrow
+
+
+# ==== Feature engineered data ====
+
+df_aapl_engineered:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/df_aapl_engineered.parquet
+  save_args:
+    engine: pyarrow
+
+df_amzn_engineered:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/df_amzn_engineered.parquet
+  save_args:
+    engine: pyarrow
+
+df_blk_engineered:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/df_blk_engineered.parquet
+  save_args:
+    engine: pyarrow
+
+df_googl_engineered:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/df_googl_engineered.parquet
+  save_args:
+    engine: pyarrow
+
+df_msft_engineered:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/df_msft_engineered.parquet
+  save_args:
+    engine: pyarrow
